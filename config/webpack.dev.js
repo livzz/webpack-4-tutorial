@@ -30,14 +30,25 @@ module.exports = {
           loader: "file-loader", // 3: Create the html file
           options: {
             name: "[name].html"
-          }
+          },
         }, {
           loader: "extract-loader" // 2: Extract as seperate file and doesnot include in bundle
         },
         {
-          loader: "html-loader" // 1: Loades the html
+          loader: "html-loader", // 1: Loades the html and lints the file
+          options: {
+            attrs: ["img:src"]
+          }
         }
       ]
+    }, {
+      test: /\.(jpg|gif|png)$/,
+      use: [{
+        loader: "file-loader",
+        options: {
+          name: "assets/images/[name].[ext]"
+        }
+      }]
     }]
   }
 }
