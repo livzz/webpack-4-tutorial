@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: './src/main.js'
+    main: './src/js/main.js'
   },
   mode: "development", // Two modes avaliable "production" and "developemnt"
   output: {
@@ -12,5 +12,17 @@ module.exports = {
   },
   devServer: {
     contentBase: "dist" // Folder from where webpack-dev-derver will server files via http
+  },
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: [{
+          loader: "style-loader"
+        },
+        {
+          loader: "css-loader"
+        }
+      ]
+    }]
   }
 }
