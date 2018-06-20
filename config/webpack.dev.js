@@ -31,7 +31,8 @@ module.exports = {
           options: {
             name: "[name].html"
           },
-        }, {
+        },
+        {
           loader: "extract-loader" // 2: Extract as seperate file and doesnot include in bundle
         },
         {
