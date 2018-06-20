@@ -2,9 +2,9 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: ['babel-polyfill', './src/js/main.js']
+    main: ['./src/js/main.js']
   },
-  mode: "development", // Two modes avaliable "production" and "developemnt"
+  mode: "development", // Two modes avaliable "production" and "development"
   output: {
     filename: "[name]-bundle.js", // [name] is the name of the file
     path: path.resolve(__dirname, "../dist"),
